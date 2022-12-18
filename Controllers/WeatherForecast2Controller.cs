@@ -5,24 +5,24 @@ namespace Practice_generics_in_csharp.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class WeatherForecast2Controller : ControllerBase
 {
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-    private readonly LoggingService<FileSystemLogger> loggingService;
+    private readonly LoggingService<ConsoleLogger> loggingService;
 
-    public WeatherForecastController()
+    public WeatherForecast2Controller()
     {
-        this.loggingService = new LoggingService<FileSystemLogger>(new FileSystemLogger());
+        this.loggingService = new LoggingService<ConsoleLogger>(new ConsoleLogger());
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet(Name = "GetWeatherForecast2")]
     public IEnumerable<WeatherForecast> Get()
     {
-        loggingService.Log("Running GetWeatherForecast");
+        loggingService.Log("Running GetWeatherForecast2");
 
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
