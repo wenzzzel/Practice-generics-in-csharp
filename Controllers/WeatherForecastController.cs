@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Practice_generics_in_csharp.Interfaces;
 
 namespace Practice_generics_in_csharp.Controllers;
 
@@ -12,15 +13,20 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILoggingService loggingService;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public WeatherForecastController(
+        ILogger<WeatherForecastController> logger,
+        ILoggingService loggingService)
     {
         _logger = logger;
+        this.loggingService = loggingService;
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
+        loggingService.LogInformation("Running GetWeatherForecast");
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
             Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),

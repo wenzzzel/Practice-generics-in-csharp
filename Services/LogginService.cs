@@ -6,6 +6,6 @@ public class LoggingService : ILoggingService
 {
     public void LogInformation(string message)
     {
-        System.Console.WriteLine("INFORMATION: Logging using console.writeline");
+        System.Console.WriteLine($"INFORMATION: {message} - Logged using console.writeline");
     }
 }
