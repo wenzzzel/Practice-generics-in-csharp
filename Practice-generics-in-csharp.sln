@@ -5,6 +5,11 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice-generics-in-csharp", "Practice-generics-in-csharp.csproj", "{25480714-8738-4C11-8663-EB9AA697C7C3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{371BB121-CDD8-4418-A0FC-121F2EE50501}"
+	ProjectSection(SolutionItems) = preProject
+		BasicGenericImplementationOverview.drawio.xml = BasicGenericImplementationOverview.drawio.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
